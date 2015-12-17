@@ -19,8 +19,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using System.Runtime.Versioning;
+
 using ICSharpCode.PackageManagement.EnvDTE;
 using NuGet;
 
@@ -65,5 +65,7 @@ namespace ICSharpCode.PackageManagement
 		UpdatePackagesAction CreateUpdatePackagesAction();
 		
 		void RunPackageOperations(IEnumerable<PackageOperation> expectedOperations);
+		
+		IPackage FindPackage(string packageId, SemanticVersion version);
 	}
 }

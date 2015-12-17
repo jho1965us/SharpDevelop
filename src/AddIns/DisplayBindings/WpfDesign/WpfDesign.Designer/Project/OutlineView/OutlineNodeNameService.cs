@@ -17,18 +17,28 @@
 // DEALINGS IN THE SOFTWARE.
 
 using System;
-using ICSharpCode.Reporting.PageBuilder.ExportColumns;
 
-namespace ICSharpCode.Reporting.Exporter.Visitors
+namespace ICSharpCode.WpfDesign.Designer.OutlineView
 {
-	public interface IVisitor
+	/// <summary>
+	/// Description of OulineNodeNameService.
+	/// </summary>
+	public class OutlineNodeNameService : IOutlineNodeNameService
 	{
-		void Visit(ExportPage page);
-		void Visit(ExportContainer exportColumn);
-		void Visit(ExportText exportColumn);
-		void Visit(ExportLine exportGraphics);
-		void Visit (ExportRectangle exportRectangle);
-		void Visit (ExportCircle exportCircle);
-		void Visit (ExportImage exportImage);
+		public OutlineNodeNameService()
+		{
+		}
+
+		#region IOutlineNodeNameService implementation
+
+		public string GetOutlineNodeName(DesignItem designItem)
+		{
+			if (string.IsNullOrEmpty(designItem.Name)) {
+					return designItem.ComponentType.Name;
+				}
+				return designItem.ComponentType.Name + " (" + designItem.Name + ")";
+		}
+
+		#endregion
 	}
 }

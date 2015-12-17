@@ -17,18 +17,26 @@
 // DEALINGS IN THE SOFTWARE.
 
 using System;
-using ICSharpCode.Reporting.PageBuilder.ExportColumns;
+using System.Windows.Input;
 
-namespace ICSharpCode.Reporting.Exporter.Visitors
+namespace ICSharpCode.WpfDesign.Designer
 {
-	public interface IVisitor
+	/// <summary>
+	/// Description of Commands.
+	/// </summary>
+	public static class Commands
 	{
-		void Visit(ExportPage page);
-		void Visit(ExportContainer exportColumn);
-		void Visit(ExportText exportColumn);
-		void Visit(ExportLine exportGraphics);
-		void Visit (ExportRectangle exportRectangle);
-		void Visit (ExportCircle exportCircle);
-		void Visit (ExportImage exportImage);
+		public static ICommand AlignTopCommand = new RoutedCommand();
+        public static ICommand AlignMiddleCommand = new RoutedCommand();
+        public static ICommand AlignBottomCommand = new RoutedCommand();
+        public static ICommand AlignLeftCommand = new RoutedCommand();
+        public static ICommand AlignCenterCommand = new RoutedCommand();
+        public static ICommand AlignRightCommand = new RoutedCommand();
+        public static ICommand RotateLeftCommand = new RoutedCommand();
+        public static ICommand RotateRightCommand = new RoutedCommand();
+        
+        static Commands()
+        {
+        }
 	}
 }
