@@ -56,7 +56,7 @@ namespace ICSharpCode.WpfDesign.Designer.Extensions
 		protected DesignerThumb CreateThumb(PlacementAlignment alignment, Cursor cursor)
 		{
 			DesignerThumb designerThumb = new DesignerThumb { Alignment = alignment, Cursor = cursor, IsPrimarySelection = true};
-			AdornerPanel.SetPlacement(designerThumb, Place(ref designerThumb, alignment));
+			AdornerPanel.SetPlacement(designerThumb, Place(designerThumb, alignment));
 
 			adornerPanel.Children.Add(designerThumb);
 
